@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +16,72 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Not Authenticated" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6g5-yo-oBa">
+                                <rect key="frame" x="230" y="290" width="139.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aNE-wg-fpG">
+                                <rect key="frame" x="141.5" y="380" width="73" height="30"/>
+                                <state key="normal" title="Store Data">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="storeData:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oFv-Rv-DzS"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oR4-0p-TIU">
+                                <rect key="frame" x="200" y="330" width="200" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="G0d-jU-WuU"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uOz-se-BKK">
+                                <rect key="frame" x="394" y="380" width="71" height="30"/>
+                                <state key="normal" title="Load Data">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="loadData:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xiH-aC-tT1"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="uOz-se-BKK" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="20" id="0zq-ZE-j17"/>
+                            <constraint firstItem="uOz-se-BKK" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="50" id="8MQ-TZ-Eqb"/>
+                            <constraint firstItem="aNE-wg-fpG" firstAttribute="top" secondItem="oR4-0p-TIU" secondAttribute="bottom" constant="20" id="AFl-y0-W3b"/>
+                            <constraint firstItem="uOz-se-BKK" firstAttribute="leading" secondItem="aNE-wg-fpG" secondAttribute="trailing" constant="50" id="Emb-Xb-i5G"/>
+                            <constraint firstAttribute="centerX" secondItem="uOz-se-BKK" secondAttribute="centerX" id="Icu-z5-k4i"/>
+                            <constraint firstItem="aNE-wg-fpG" firstAttribute="top" secondItem="6g5-yo-oBa" secondAttribute="bottom" constant="20" id="a8s-IB-PFn"/>
+                            <constraint firstItem="oR4-0p-TIU" firstAttribute="top" secondItem="6g5-yo-oBa" secondAttribute="bottom" constant="20" id="jaB-We-Z2I"/>
+                            <constraint firstAttribute="centerY" secondItem="6g5-yo-oBa" secondAttribute="centerY" id="phA-y4-2Ry"/>
+                            <constraint firstAttribute="centerX" secondItem="6g5-yo-oBa" secondAttribute="centerX" id="rJu-S7-4oJ"/>
+                            <constraint firstAttribute="centerX" secondItem="oR4-0p-TIU" secondAttribute="centerX" id="rg3-Gk-Cna"/>
+                            <constraint firstAttribute="centerX" secondItem="aNE-wg-fpG" secondAttribute="centerX" id="smn-Ep-NXG"/>
+                            <constraint firstItem="uOz-se-BKK" firstAttribute="top" secondItem="oR4-0p-TIU" secondAttribute="bottom" constant="20" id="yKd-Ev-ZJU"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="a8s-IB-PFn"/>
+                                <exclude reference="0zq-ZE-j17"/>
+                                <exclude reference="8MQ-TZ-Eqb"/>
+                                <exclude reference="Icu-z5-k4i"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="authenticationLabel" destination="6g5-yo-oBa" id="P6H-6M-vEg"/>
+                        <outlet property="textField" destination="oR4-0p-TIU" id="Vvh-CF-Uau"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="603" y="346"/>
         </scene>
     </scenes>
 </document>

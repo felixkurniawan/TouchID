@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <LocalAuthentication/LocalAuthentication.h>
 
 @interface ViewController : UIViewController
-
+@property (weak, nonatomic) IBOutlet UILabel *authenticationLabel;
+@property (weak, nonatomic) IBOutlet UITextField *textField;
 
 @end
 
